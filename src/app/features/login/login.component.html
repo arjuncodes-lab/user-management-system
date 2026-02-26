@@ -1,0 +1,38 @@
+<div class="login-container">
+  <div class="card shadow-sm" style="max-width: 400px; margin: 2rem auto;">
+    <div class="card-body p-4">
+      <h2 class="card-title mb-4">Login</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            formControlName="username"
+            placeholder="Enter username"
+          />
+          <div class="text-danger small mt-1" *ngIf="form.get('username')?.invalid && form.get('username')?.touched">
+            Username is required.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Enter password"
+          />
+          <div class="text-danger small mt-1" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+            Password is required (min 6 characters).
+          </div>
+        </div>
+        <div class="text-danger small mb-2" *ngIf="errorMessage">{{ errorMessage }}</div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="form.invalid">Login</button>
+      </form>
+      <p class="text-muted small mt-3 mb-0">Demo: admin / admin123</p>
+    </div>
+  </div>
+</div>

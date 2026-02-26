@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="mb-0">Users</h2>
+  <button type="button" class="btn btn-primary" (click)="addUser()">Add User</button>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th class="text-end">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.dateOfBirth }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.phone }}</td>
+        <td class="text-end">
+          <button type="button" class="btn btn-sm btn-outline-primary me-1" (click)="editUser(user.id)">Edit</button>
+          <button type="button" class="btn btn-sm btn-outline-danger" (click)="deleteUser(user)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="users.length === 0">
+        <td colspan="5" class="text-center text-muted py-4">No users yet. Click "Add User" to create one.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

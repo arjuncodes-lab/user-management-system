@@ -1,0 +1,61 @@
+<h2 class="mb-4">{{ isEdit ? 'Edit User' : 'Add User' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control"
+      formControlName="name"
+      placeholder="Full name"
+    />
+    <div class="text-danger small mt-1" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+      Name is required.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="dateOfBirth" class="form-label">Date of Birth (DOB)</label>
+    <input
+      type="date"
+      id="dateOfBirth"
+      class="form-control"
+      formControlName="dateOfBirth"
+    />
+    <div class="text-danger small mt-1" *ngIf="form.get('dateOfBirth')?.invalid && form.get('dateOfBirth')?.touched">
+      Date of Birth is required.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="address" class="form-label">Address</label>
+    <textarea
+      id="address"
+      class="form-control"
+      formControlName="address"
+      rows="3"
+      placeholder="Address"
+    ></textarea>
+    <div class="text-danger small mt-1" *ngIf="form.get('address')?.invalid && form.get('address')?.touched">
+      Address is required.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input
+      type="tel"
+      id="phone"
+      class="form-control"
+      formControlName="phone"
+      placeholder="Phone number"
+    />
+    <div class="text-danger small mt-1" *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched">
+      Phone is required.
+    </div>
+  </div>
+  <div class="d-flex gap-2">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      {{ isEdit ? 'Update' : 'Add' }} User
+    </button>
+    <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
+  </div>
+</form>

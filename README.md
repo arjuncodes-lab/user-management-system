@@ -22,9 +22,9 @@ Below are snapshots of the running application (add your own images to the `scre
 
 | Screen | Description |
 |--------|-------------|
-| [Login](screenshots/login-page.png) | Login page with credential validation |
+| [Login](screenshots/login.png) | Login page with credential validation |
 | [Users list](screenshots/users-list.png) | User table with Add / Edit / Delete |
-| [Data entry](screenshots/data-entry.jpg) | Add/Edit user form (Name, DOB, Address, Phone) |
+| [Data entry](screenshots/data-entry.png) | Add/Edit user form (Name, DOB, Address, Phone) |
 
 Save your browser screenshots into the `screenshots/` folder with the names above (e.g. `login.png`, `users-list.png`, `data-entry.png`), then commit and push so reviewers can see the working app.
 

@@ -1,0 +1,7 @@
+# Prevent Git from modifying binary files (fixes broken images on GitHub after clone/download)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary

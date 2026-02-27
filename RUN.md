@@ -21,6 +21,6 @@ All commands below are run **inside this folder**: `C:\ednosoft\user-management-
    ```bash
    npm start
    ```
-   Then open **http://localhost:4200** and log in with `admin` / `admin123`.
+   Then open **http://localhost:4200** and log in with `arjun` / `Arjun@123`.
 
 **Proxy (only for this project):** Edit `.npmrc` in this folder and uncomment/set `proxy=` and `https-proxy=` if needed. Do not use `npm config set` so company projects stay unchanged.

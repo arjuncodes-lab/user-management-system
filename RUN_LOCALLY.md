@@ -28,7 +28,7 @@ Yarn uses different connection handling and may succeed where npm fails.
    ```
    Or: `npm start` (npm will use the existing node_modules).
 
-5. Open **http://localhost:4200** and log in with **admin** / **admin123**.
+5. Open **http://localhost:4200** and log in with **arjun** / **Arjun@123**.
 
 If Yarn install completes, you are done. Run the app and then push to GitHub.
 
@@ -66,7 +66,7 @@ Each run reuses the cache and may get a bit further. Sometimes 5–10 runs compl
    ```bash
    npm start
    ```
-4. Open http://localhost:4200 and log in with **admin** / **admin123**.
+4. Open http://localhost:4200 and log in with **arjun** / **Arjun@123**.
 
 ---
 
@@ -91,7 +91,7 @@ If you have access to another computer with **stable internet** (home, friend, c
    cd C:\ednosoft\user-management-app
    npm start
    ```
-6. Open http://localhost:4200 and log in with **admin** / **admin123**.
+6. Open http://localhost:4200 and log in with **arjun** / **Arjun@123**.
 
 No need to run `npm install` again on the laptop.
 

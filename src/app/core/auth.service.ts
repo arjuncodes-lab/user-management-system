@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 const AUTH_KEY = 'user-management-auth';
 // demo user for local run (replace with real auth/API in production)
-const DEMO_USER = { username: 'admin', password: 'admin123' };
+const DEMO_USER = { username: 'arjun', password: 'Arjun@123' };
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {

@@ -23,7 +23,8 @@
       formControlName="dateOfBirth"
     />
     <div class="text-danger small mt-1" *ngIf="form.get('dateOfBirth')?.invalid && form.get('dateOfBirth')?.touched">
-      Date of Birth is required.
+      <span *ngIf="form.get('dateOfBirth')?.errors?.['required']">Date of Birth is required.</span>
+      <span *ngIf="form.get('dateOfBirth')?.errors?.['maxDate']">Date of Birth cannot be in the future.</span>
     </div>
   </div>
   <div class="mb-3">
@@ -49,7 +50,9 @@
       placeholder="Phone number"
     />
     <div class="text-danger small mt-1" *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched">
-      Phone is required.
+      <span *ngIf="form.get('phone')?.errors?.['required']">Phone is required.</span>
+      <span *ngIf="form.get('phone')?.errors?.['maxlength']">Phone must be at most 20 characters.</span>
+      <span *ngIf="form.get('phone')?.errors?.['pattern'] && !form.get('phone')?.errors?.['required']">Phone can only contain digits, spaces, +, -, and parentheses.</span>
     </div>
   </div>
   <div class="d-flex gap-2">

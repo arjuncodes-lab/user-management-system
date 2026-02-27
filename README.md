@@ -2,6 +2,8 @@
 
 Angular 12 app for the assignment: login, user list (add/edit/delete), data entry form, and log off. Data is kept in browser localStorage for demo; no backend.
 
+**Submission note:** This project is the one to submit. Demo login: **arjun** / **Arjun@123**.
+
 ## How to run
 
 **Prerequisites:** Node 12.x or 14.x, npm 6+

@@ -1,7 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../core/user.service';
+
+function maxDateToday(control: AbstractControl): ValidationErrors | null {
+  if (!control.value) return null;
+  const d = new Date(control.value);
+  if (isNaN(d.getTime())) return null;
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+  return d <= today ? null : { maxDate: true };
+}
 
 @Component({
   selector: 'app-data-entry',
@@ -21,9 +36,16 @@ export class DataEntryComponent implements OnInit {
   ) {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
-      dateOfBirth: ['', [Validators.required]],
+      dateOfBirth: ['', [Validators.required, maxDateToday]],
       address: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
+      phone: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^[0-9+\-\s()]+$/),
+        ],
+      ],
     });
   }
 
@@ -32,7 +54,7 @@ export class DataEntryComponent implements OnInit {
     if (id) {
       this.isEdit = true;
       this.editId = id;
-      const user = this.userService.getUserById(id); // load for edit
+      const user = this.userService.getUserById(id);
       if (user) {
         this.form.patchValue({
           name: user.name,

@@ -8,7 +8,6 @@ export class UserService {
   private users: User[] = this.loadFromStorage();
 
   private loadFromStorage(): User[] {
-    // guard for SSR / missing localStorage
     if (typeof localStorage === 'undefined') return [];
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
